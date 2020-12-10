@@ -13,5 +13,8 @@ namespace Hotel_Management_System_WPF
     /// </summary>
     public partial class App : Application
     {
+
+       
+        
     }
 }

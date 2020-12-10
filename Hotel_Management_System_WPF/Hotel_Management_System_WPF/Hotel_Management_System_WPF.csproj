@@ -37,6 +37,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net-Next, Version=4.0.2.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net-Next.4.0.2\lib\net472\BCrypt.Net-Next.dll</HintPath>
+    </Reference>
+    <Reference Include="Dragablz, Version=0.0.3.223, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dragablz.0.0.3.223\lib\net45\Dragablz.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialDesignColors, Version=1.2.7.1979, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.1.2.7\lib\net45\MaterialDesignColors.dll</HintPath>
     </Reference>
@@ -44,7 +56,23 @@
       <HintPath>..\packages\MaterialDesignThemes.3.2.0\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -63,11 +91,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Frm\Login.xaml">
+    <Page Include="Rd\Image.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Uc\test.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -75,10 +111,91 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Frm\Login.xaml.cs">
+    <Compile Include="Model\change_info_history.cs">
+      <DependentUpon>HotelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\class.cs">
+      <DependentUpon>HotelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\customer.cs">
+      <DependentUpon>HotelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\employee.cs">
+      <DependentUpon>HotelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\food.cs">
+      <DependentUpon>HotelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\food_detail_order.cs">
+      <DependentUpon>HotelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\food_order.cs">
+      <DependentUpon>HotelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\food_service.cs">
+      <DependentUpon>HotelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\HotelEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HotelEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\HotelEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HotelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\HotelEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HotelEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\invoice.cs">
+      <DependentUpon>HotelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\payment.cs">
+      <DependentUpon>HotelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\payment_method.cs">
+      <DependentUpon>HotelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\reservation.cs">
+      <DependentUpon>HotelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\room.cs">
+      <DependentUpon>HotelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\schedule.cs">
+      <DependentUpon>HotelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\service_detail_order.cs">
+      <DependentUpon>HotelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\service_info.cs">
+      <DependentUpon>HotelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\service_order.cs">
+      <DependentUpon>HotelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\successful_reservation.cs">
+      <DependentUpon>HotelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sysdiagram.cs">
+      <DependentUpon>HotelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\user_info.cs">
+      <DependentUpon>HotelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\user_type.cs">
+      <DependentUpon>HotelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Uc\test.xaml.cs">
+      <DependentUpon>test.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -105,6 +222,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="Model\HotelEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HotelEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\HotelEntity.edmx.diagram">
+      <DependentUpon>HotelEntity.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -115,12 +239,30 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\" />
     <Folder Include="Dao\" />
     <Folder Include="ModelView\" />
-    <Folder Include="Model\" />
-    <Folder Include="Uc\" />
     <Folder Include="Utils\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Hotel_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\showpassword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\HotelEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>HotelEntity.Context.cs</LastGenOutput>
+      <DependentUpon>HotelEntity.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model\HotelEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HotelEntity.edmx</DependentUpon>
+      <LastGenOutput>HotelEntity.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.2.0\build\MaterialDesignThemes.targets')" />
